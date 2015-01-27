@@ -1,5 +1,6 @@
 module Zebra
   class PrintJob
+
     class UnknownPrinter < StandardError
       def initialize(printer)
         super("Could not find a printer named #{printer}")
@@ -9,6 +10,7 @@ module Zebra
     attr_reader :printer
 
     def initialize(printer)
+      raise "Cups not loaded, maybe you forgot to add it to your Gemfile?" unless defined?(Cups)
       check_existent_printers printer
 
       @printer = printer
