@@ -1,6 +1,6 @@
 begin
   require "cups"
-rescue nil
+rescue LoadError
 end
 require "tempfile"
 require "zebra/epl/version"
