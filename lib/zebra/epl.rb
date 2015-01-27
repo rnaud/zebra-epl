@@ -1,4 +1,7 @@
-require "cups"
+begin
+  require "cups"
+rescue nil
+end
 require "tempfile"
 require "zebra/epl/version"
 require "zebra/epl/language"
